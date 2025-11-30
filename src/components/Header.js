@@ -104,14 +104,11 @@ const headerStyles = `
     width: 100%;
     z-index: var(--z-sticky);
     transition: all var(--transition-base);
-    background: transparent;
+    background: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
   }
   
   .header.scrolled {
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
-    border-bottom: 1px solid var(--glass-border);
     box-shadow: var(--shadow-md);
   }
   
@@ -129,18 +126,16 @@ const headerStyles = `
   
   .nav-brand .logo {
     font-family: var(--font-heading);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrabold);
     color: var(--color-text-primary);
     text-decoration: none;
-    letter-spacing: -0.02em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
   
   .logo-text {
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-text-primary);
   }
   
   .nav-menu {
@@ -151,16 +146,16 @@ const headerStyles = `
   
   .nav-list {
     display: flex;
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
     list-style: none;
   }
   
   .nav-link {
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     font-weight: var(--font-weight-medium);
     font-size: var(--font-size-sm);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     transition: color var(--transition-fast);
     position: relative;
   }
@@ -172,16 +167,17 @@ const headerStyles = `
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--gradient-gold);
+    background: var(--color-text-primary);
     transition: width var(--transition-base);
   }
   
   .nav-link:hover {
-    color: var(--color-text-primary);
+    color: var(--color-accent-primary);
   }
   
   .nav-link:hover::after {
     width: 100%;
+    background: var(--color-accent-primary);
   }
   
   .nav-actions {
@@ -193,17 +189,17 @@ const headerStyles = `
   .nav-icon {
     background: transparent;
     border: none;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     cursor: pointer;
     padding: var(--space-sm);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     transition: all var(--transition-fast);
     position: relative;
   }
   
   .nav-icon:hover {
-    color: var(--color-accent-gold);
-    background: var(--glass-bg);
+    color: var(--color-accent-primary);
+    background: var(--color-bg-secondary);
   }
   
   .cart-icon {
@@ -212,9 +208,9 @@ const headerStyles = `
   
   .cart-count {
     position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--gradient-gold);
+    top: -2px;
+    right: -2px;
+    background: var(--color-accent-primary);
     color: var(--color-bg-primary);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
@@ -270,6 +266,7 @@ const headerStyles = `
       opacity: 0;
       visibility: hidden;
       transition: all var(--transition-base);
+      box-shadow: var(--shadow-md);
     }
     
     .nav-menu.active {

@@ -120,24 +120,20 @@ const productCardStyles = `
     position: relative;
     display: flex;
     flex-direction: column;
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
+    background: var(--color-bg-primary);
     overflow: hidden;
     transition: all var(--transition-base);
   }
   
   .product-card:hover {
-    border-color: var(--color-border-hover);
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-lg);
   }
   
   .product-image-wrapper {
     position: relative;
     aspect-ratio: 3/4;
     overflow: hidden;
-    background: var(--color-bg-tertiary);
+    background: var(--color-bg-secondary);
   }
   
   .product-image {
@@ -148,7 +144,7 @@ const productCardStyles = `
   }
   
   .product-card:hover .product-image {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
   
   .product-badge {
@@ -159,25 +155,25 @@ const productCardStyles = `
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: var(--radius-full);
+    letter-spacing: 0.08em;
+    border-radius: var(--radius-sm);
     z-index: 2;
   }
   
   .badge-new {
-    background: var(--gradient-gold);
+    background: var(--color-text-primary);
     color: var(--color-bg-primary);
   }
   
   .badge-sale {
-    background: var(--color-accent-rose-gold);
-    color: var(--color-text-primary);
+    background: var(--color-accent-primary);
+    color: var(--color-bg-primary);
   }
   
   .product-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(10, 10, 10, 0.7);
+    background: rgba(255, 255, 255, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -194,8 +190,10 @@ const productCardStyles = `
     background: var(--color-text-primary);
     color: var(--color-bg-primary);
     border: none;
-    border-radius: var(--radius-lg);
-    font-weight: var(--font-weight-semibold);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
     transform: translateY(10px);
     transition: all var(--transition-base);
@@ -206,7 +204,7 @@ const productCardStyles = `
   }
   
   .btn-quick-view:hover {
-    background: var(--color-accent-gold);
+    background: var(--color-accent-primary);
   }
   
   .btn-wishlist {
@@ -218,9 +216,8 @@ const productCardStyles = `
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
+    background: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
     color: var(--color-text-primary);
     cursor: pointer;
@@ -230,8 +227,9 @@ const productCardStyles = `
   
   .btn-wishlist:hover,
   .btn-wishlist.active {
-    background: var(--color-accent-rose-gold);
-    border-color: var(--color-accent-rose-gold);
+    background: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
+    color: var(--color-bg-primary);
   }
   
   .btn-wishlist.active svg {
@@ -239,10 +237,10 @@ const productCardStyles = `
   }
   
   .product-info {
-    padding: var(--space-lg);
+    padding: var(--space-lg) 0;
     display: flex;
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
   }
   
   .product-category {
@@ -250,12 +248,12 @@ const productCardStyles = `
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: var(--color-text-tertiary);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
   }
   
   .product-name {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
     margin: 0;
   }
   
@@ -265,26 +263,26 @@ const productCardStyles = `
   }
   
   .product-name a:hover {
-    color: var(--color-accent-gold);
+    color: var(--color-accent-primary);
   }
   
   .product-price {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
   }
   
   .price,
   .price-sale {
-    color: var(--color-accent-gold);
+    color: var(--color-text-primary);
   }
   
   .price-original {
     color: var(--color-text-tertiary);
     text-decoration: line-through;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
   }
   
@@ -305,31 +303,32 @@ const productCardStyles = `
   
   .color-swatch:hover {
     transform: scale(1.2);
-    border-color: var(--color-accent-gold);
+    border-color: var(--color-text-primary);
   }
   
   .btn-add-cart {
     margin-top: var(--space-sm);
-    padding: var(--space-md);
-    background: transparent;
-    color: var(--color-text-primary);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    font-weight: var(--font-weight-semibold);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+    border: 2px solid var(--color-text-primary);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     cursor: pointer;
     transition: all var(--transition-base);
   }
   
   .btn-add-cart:hover {
-    background: var(--gradient-gold);
-    color: var(--color-bg-primary);
-    border-color: transparent;
+    background: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
   }
   
   .btn-add-cart.added {
-    background: var(--color-accent-gold);
-    color: var(--color-bg-primary);
-    border-color: transparent;
+    background: var(--color-accent-primary);
+    border-color: var(--color-accent-primary);
   }
 `;
 

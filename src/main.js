@@ -97,7 +97,7 @@ function updateCartCount() {
 // About page styles
 const aboutStyles = `
   .about-page {
-    margin-top: 80px;
+    margin-top: 70px;
   }
   
   .about-header {
@@ -105,6 +105,18 @@ const aboutStyles = `
     background: var(--color-bg-secondary);
     border-bottom: 1px solid var(--color-border);
     text-align: center;
+  }
+  
+  .page-title {
+    font-size: var(--font-size-5xl);
+    font-weight: var(--font-weight-extrabold);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  
+  .page-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
   }
   
   .about-content {
@@ -116,44 +128,57 @@ const aboutStyles = `
   .about-text h2 {
     font-size: var(--font-size-3xl);
     margin-bottom: var(--space-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
   }
   
   .about-text p {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     line-height: 1.8;
     margin-bottom: var(--space-lg);
+    color: var(--color-text-secondary);
   }
   
   .about-values {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
   }
   
   .value-card {
-    padding: var(--space-xl);
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+  }
+  
+  .value-card:hover {
+    box-shadow: var(--shadow-md);
   }
   
   .value-card h3 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-sm);
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .value-card p {
     color: var(--color-text-secondary);
     margin: 0;
+    font-size: var(--font-size-sm);
   }
   
   @media (max-width: 768px) {
     .about-content {
       grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+      font-size: var(--font-size-4xl);
     }
   }
 `;
