@@ -146,13 +146,12 @@ const footerStyles = `
   
   .footer-brand {
     font-family: var(--font-heading);
-    font-size: var(--font-size-2xl);
-    font-weight: var(--font-weight-bold);
-    background: var(--gradient-gold);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
   
   .footer-description {
@@ -181,7 +180,7 @@ const footerStyles = `
   }
   
   .social-link:hover {
-    background: var(--gradient-gold);
+    background: var(--color-text-primary);
     color: var(--color-bg-primary);
     transform: translateY(-2px);
   }
@@ -207,7 +206,7 @@ const footerStyles = `
   }
   
   .footer-links a:hover {
-    color: var(--color-accent-gold);
+    color: var(--color-accent-primary);
   }
   
   .newsletter-text {
@@ -227,7 +226,7 @@ const footerStyles = `
     padding: var(--space-md);
     background: var(--color-bg-primary);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     color: var(--color-text-primary);
     font-size: var(--font-size-sm);
     transition: all var(--transition-fast);
@@ -235,20 +234,21 @@ const footerStyles = `
   
   .newsletter-input:focus {
     outline: none;
-    border-color: var(--color-accent-gold);
+    border-color: var(--color-text-primary);
   }
   
   .newsletter-btn {
     padding: var(--space-md);
-    background: var(--gradient-gold);
+    background: var(--color-text-primary);
     border: none;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-sm);
     color: var(--color-bg-primary);
     cursor: pointer;
     transition: all var(--transition-base);
   }
   
   .newsletter-btn:hover {
+    background: var(--color-accent-primary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
   }
@@ -278,7 +278,7 @@ const footerStyles = `
   }
   
   .footer-legal a:hover {
-    color: var(--color-accent-gold);
+    color: var(--color-accent-primary);
   }
   
   .separator {

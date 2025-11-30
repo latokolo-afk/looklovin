@@ -1,6 +1,7 @@
 /* ============================================
    LookLovin Design System
-   Premium Dark Mode Luxury Aesthetic
+   Clean, Image-Forward E-Commerce Aesthetic
+   Inspired by Rungolee.com
    ============================================ */
 
 /* === CSS Reset & Base === */
@@ -29,36 +30,36 @@ body {
 
 /* === Design Tokens === */
 :root {
-  /* Colors - Luxury Dark Palette */
-  --color-bg-primary: #0a0a0a;
-  --color-bg-secondary: #141414;
-  --color-bg-tertiary: #1a1a1a;
-  --color-bg-elevated: #1f1f1f;
+  /* Colors - Clean Light Palette */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9f9f9;
+  --color-bg-tertiary: #f4f4f4;
+  --color-bg-elevated: #fefefe;
   
-  --color-accent-gold: #d4af37;
-  --color-accent-champagne: #f7e7ce;
-  --color-accent-rose-gold: #b76e79;
+  --color-accent-primary: #d95d5d;
+  --color-accent-secondary: #e89393;
+  --color-accent-dark: #b84848;
   
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #b8b8b8;
-  --color-text-tertiary: #808080;
-  --color-text-muted: #4a4a4a;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-text-muted: #cccccc;
   
-  --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-hover: rgba(255, 255, 255, 0.2);
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: rgba(0, 0, 0, 0.2);
   
   /* Gradients */
-  --gradient-gold: linear-gradient(135deg, #d4af37 0%, #f7e7ce 100%);
-  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-  --gradient-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0) 0%, rgba(10, 10, 10, 0.8) 100%);
+  --gradient-primary: linear-gradient(135deg, #d95d5d 0%, #e89393 100%);
+  --gradient-light: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
+  --gradient-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
   
-  /* Glassmorphism */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-blur: blur(20px);
+  /* Light Effects */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-blur: blur(10px);
   
   /* Typography */
-  --font-heading: 'Playfair Display', serif;
+  --font-heading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   
   --font-size-xs: 0.75rem;    /* 12px */
@@ -103,10 +104,10 @@ body {
   --radius-full: 9999px;
   
   /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.18);
   
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
@@ -143,15 +144,18 @@ h1 {
   font-size: var(--font-size-5xl);
   font-weight: var(--font-weight-extrabold);
   letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
 h2 {
   font-size: var(--font-size-4xl);
   letter-spacing: -0.01em;
+  font-weight: var(--font-weight-extrabold);
 }
 
 h3 {
   font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
 }
 
 h4 {
@@ -172,13 +176,13 @@ p {
 }
 
 a {
-  color: var(--color-accent-gold);
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 a:hover {
-  color: var(--color-accent-champagne);
+  color: var(--color-accent-primary);
 }
 
 /* === Utility Classes === */
@@ -249,12 +253,12 @@ a:hover {
   text-align: center;
 }
 
-.text-gold {
-  color: var(--color-accent-gold);
+.text-accent {
+  color: var(--color-accent-primary);
 }
 
 .text-gradient {
-  background: var(--gradient-gold);
+  background: var(--gradient-primary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -269,22 +273,25 @@ a:hover {
   padding: var(--space-md) var(--space-xl);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-semibold);
   border: none;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn-primary {
-  background: var(--gradient-gold);
+  background: var(--color-text-primary);
   color: var(--color-bg-primary);
   box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
+  background: var(--color-accent-primary);
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
@@ -292,12 +299,12 @@ a:hover {
 .btn-secondary {
   background: transparent;
   color: var(--color-text-primary);
-  border: 2px solid var(--color-border);
+  border: 2px solid var(--color-text-primary);
 }
 
 .btn-secondary:hover {
-  border-color: var(--color-accent-gold);
-  background: var(--glass-bg);
+  background: var(--color-text-primary);
+  color: var(--color-bg-primary);
 }
 
 .btn-ghost {
@@ -307,22 +314,21 @@ a:hover {
 }
 
 .btn-ghost:hover {
-  background: var(--glass-bg);
+  background: var(--color-bg-secondary);
 }
 
 /* Card */
 .card {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-sm);
   padding: var(--space-xl);
   transition: all var(--transition-base);
 }
 
 .card:hover {
-  border-color: var(--color-border-hover);
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 /* Glass Card */
@@ -331,7 +337,7 @@ a:hover {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-sm);
   padding: var(--space-xl);
 }
 
@@ -342,16 +348,16 @@ a:hover {
   font-family: var(--font-body);
   font-size: var(--font-size-base);
   color: var(--color-text-primary);
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   transition: all var(--transition-fast);
 }
 
 .input:focus {
   outline: none;
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  border-color: var(--color-text-primary);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05);
 }
 
 .input::placeholder {
@@ -510,22 +516,22 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-bg-elevated);
+  background: var(--color-border);
   border-radius: var(--radius-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-gold);
+  background: var(--color-text-primary);
 }
 
 /* Selection */
 ::selection {
-  background: var(--color-accent-gold);
+  background: var(--color-accent-primary);
   color: var(--color-bg-primary);
 }
 
 /* Focus Visible */
 :focus-visible {
-  outline: 2px solid var(--color-accent-gold);
+  outline: 2px solid var(--color-text-primary);
   outline-offset: 2px;
 }
