@@ -1,0 +1,23 @@
+{
+  "name": "looklovin",
+  "version": "1.0.0",
+  "description": "High-end online clothing store - World-class e-commerce platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "ecommerce",
+    "fashion",
+    "luxury",
+    "clothing",
+    "online-store"
+  ],
+  "author": "LookLovin",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
